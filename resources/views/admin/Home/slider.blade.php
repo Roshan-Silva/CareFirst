@@ -92,20 +92,22 @@
                                         <tr>
                                             <th>top_heading</th>
                                             <th>bottom_sub_heading</th>
-                                            <th>mg_link</th>
+                                            <th>img_link</th>
                                             <th>get_appointment_link</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     
                                     <tbody>
+                                        @foreach($sliders as $slider)
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>$320,800</td>
+                                            <td>{{$slider->top_heading}}</td>
+                                            <td>{{$slider->bottom_sub_heading}}</td>
+                                            <td><img width="100" src="{{asset('storage/'.$slider->img_link)}}" alt=""></td>
+                                            <td>{{$slider->get_appointment_link}}</td>
+                                            <td>button</td>
                                         </tr>
+                                        @endforeach
                                        
                                     </tbody>
                                 </table>

@@ -9,7 +9,10 @@ use Illuminate\Http\Request;
 class SliderController extends Controller
 {
     public function Index(){
-        return view('admin.home.slider');
+
+        $sliders = Slider::all();
+
+        return view('admin.home.slider',compact('sliders'));
     }
 
     public function storeslider(Request $request){
