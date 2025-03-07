@@ -103,10 +103,58 @@
                                         <tr>
                                             <td>{{$slider->top_heading}}</td>
                                             <td>{{$slider->bottom_sub_heading}}</td>
-                                            <td><img width="100" src="{{asset('storage/'.$slider->img_link)}}" alt=""></td>
+                                            <td><img width="100" src="{{asset('storage/'.$slider->img_link)}}" alt=""/></td>
                                             <td>{{$slider->get_appointment_link}}</td>
-                                            <td>button</td>
+                                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal{{$slider->id}}">Edit</button></td>
                                         </tr>
+
+                                        <!-- Modal -->
+                                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Add New Slider</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <form method="POST" action="/sliderUpdate" enctype="multipart/form-data">
+                                                    @csrf
+                                                    <div class="modal-body">
+
+                                                        <!-- Top heading -->
+                                                        <div class="form-group">
+                                                            <label for="topHeading">Top Heading</label>
+                                                            <input type="text" class="form-control" id="topHeading" name="top_heading" placeholder="Enter top heading">
+                                                        </div>
+
+                                                        <!-- Bottom sub heading -->
+                                                        <div class="form-group">
+                                                            <label for="bottomSubHeading">Bottom Sub Heading</label>
+                                                            <input type="text" class="form-control" id="bottomSubHeading" name="bottom_sub_heading" placeholder="Enter bottom sub heading">
+                                                        </div>
+
+                                                        <!-- Image upload -->
+                                                        <div class="form-group">
+                                                            <label for="imageUpload">Image Upload</label>
+                                                            <input type="file" class="form-control" id="imageUpload" name="img_link">
+                                                        </div>
+                                                        
+                                                        <!-- Get appointment link -->
+                                                        <div class="form-group">
+                                                            <label for="getAppointmentLink">Get Appointment Link</label>
+                                                            <input type="url" class="form-control" id="getAppointmentLink" name="get_appointment_link" placeholder="Enter get appointment link">
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Add Slider</button>
+                                                    </div>
+                                                </form>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        <!-- End Modal -->
                                         @endforeach
                                        
                                     </tbody>
