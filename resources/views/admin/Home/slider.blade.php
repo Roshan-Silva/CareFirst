@@ -10,12 +10,10 @@
   Add New Slide
 </button>
 
-<!-- Bootstrap 4 CSS -->
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- jQuery and Bootstrap 4 JavaScript -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
 
 @if (session('success'))
 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -32,6 +30,8 @@
     </ul>
 </div>
 @endif
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
