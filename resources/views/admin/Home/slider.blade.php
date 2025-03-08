@@ -105,7 +105,7 @@
                                             <td>{{$slider->bottom_sub_heading}}</td>
                                             <td><img width="100" src="{{asset('storage/'.$slider->img_link)}}" alt=""/></td>
                                             <td>{{$slider->get_appointment_link}}</td>
-                                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal{{$slider->id}}">Edit</button></td>
+                                            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal{{$slider->id}}">Edit</button></td>
                                         </tr>
 
                                         <!-- Modal -->
